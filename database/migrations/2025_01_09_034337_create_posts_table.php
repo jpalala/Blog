@@ -17,6 +17,8 @@ return new class extends Migration
              $table->string('slug')->unique();
              $table->string('filepath');
              $table->foreignId('author_id')->constrained('authors')->onDelete('cascade');
+             $table->enum('status', ['draft', 'published'])->default('draft'); // Added status field
+             $table->softDeletes(); // Added softDeletes
              $table->timestamps();
         });
     }
