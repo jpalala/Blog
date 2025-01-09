@@ -13,9 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\FileEditorController;
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/post/{year}/{month}/{day}/{slug}', [PostController::class, 'show'])->name('posts.show');
+
+
+Route::get('/editor', [FileEditorController::class, 'show'])->name('editor.show');
+Route::post('/editor', [FileEditorController::class, 'update'])->name('editor.update');
 
 Route::get('/', function () {
     return view('welcome');
