@@ -1,13 +1,15 @@
 {
     "private": true,
-    "type": "module",
+    "type":"module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "mix": "npx mix"
     },
     "devDependencies": {
         "axios": "^1.6.4",
         "laravel-vite-plugin": "^1.0.0",
+        "sass": "^1.83.1",
         "vite": "^5.0.0"
     }
 }

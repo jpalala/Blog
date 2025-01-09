@@ -1,0 +1,44 @@
+.color-purple {
+  color: #6777ef;
+}
+
+html {
+  font: (calc(1em + .25vw) / 1.4) system-ui, sans-serif;
+}
+
+body {
+  margin: auto;
+  padding: 0 1em;
+  max-width: 40em;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+code, kbd {
+  font-family: ui-monospace,monospace;
+  font-size: .8em;
+}
+
+pre {
+  font-family: ui-monospace,monospace;
+  font-size: .8em;
+  overflow: auto;
+
+  > code {
+    font-size: 1em;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  padding: .5em;
+  border: 1px solid;
+}
+
