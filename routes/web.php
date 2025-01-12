@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FileEditorController;
+
+// auth with github
+Route::get('/auth/github', [App\Http\Controllers\AuthController::class, 'redirectToGitHub'])->name('auth.redirect-to-github');
+Route::get('/auth/github/callback', [App\Http\Controllers\AuthController::class, 'handleGitHubCallback'])->name('auth.handle-github-callback');
+
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/post/{year}/{month}/{day}/{slug}', [PostController::class, 'show'])->name('posts.show');
