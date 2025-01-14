@@ -13,21 +13,21 @@
     </head>
     <body>
 <header>
-		<h1>Joes Joernal</h1>
+    <h1>Joes Joernal</h1>
 </header>
 
-    <nav><ul><li><a href="#about-me">about me</a></nav>
     <body>
         <div class="text-center blog">
-		<h1>My blog posts</h2>
-	    	    <div class="blog">
-		<ul id="posts">
-			@foreach ($posts as $post)
-                <li>
-                    <a href="{{ url("post/{$post->slug}") }}">{{ $post->title }}</a>
-            @endforeach
-</a></li>
-		</ul>
-	    </div>
+               @if(isset($posts))
+                    @foreach ($posts as $post)
+                        <li>
+                            <a href="{{ url("post/{$post->slug}") }}">{{ $post->title }}</a></li>
+                    @endforeach
+                @else
+                    <li> No posts yet </li>
+                @endif
+                </ul>
+            </div>
+        <footer>&copy; @php echo date('Y') @endphp</footer>
     </body>
 </html>
